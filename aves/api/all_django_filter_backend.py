@@ -10,12 +10,12 @@ class AllDjangoFilterBackend(DjangoFilterBackend):
         """
         Return the django-filters `FilterSet` used to filter the queryset.
         """
-        filter_class = getattr(view, 'filter_class', None)
-        filter_fields = getattr(view, 'filter_fields', None)
+        filter_class = getattr(view, "filter_class", None)
+        filter_fields = getattr(view, "filter_fields", None)
 
         if filter_class or filter_fields:
-            return super(AllDjangoFilterBackend, self).get_filter_class(
-                self, view, queryset)
+            return super(AllDjangoFilterBackend,
+                         self).get_filter_class(self, view, queryset)
 
         class AutoFilterSet(self.default_filter_set):
             class Meta:
