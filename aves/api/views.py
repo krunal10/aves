@@ -1,11 +1,10 @@
 from __future__ import absolute_import, unicode_literals
 
-from django.contrib.auth.models import User, Group
-from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
+from django.contrib.auth.models import Group, User
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 
 from .models import Organization
-from .serializers import UserSerializer, GroupSerializer, \
-    OrganizationSerializer
+from .serializers import GroupSerializer, OrganizationSerializer, UserSerializer
 
 
 class UserViewSet(ReadOnlyModelViewSet):
